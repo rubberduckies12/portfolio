@@ -1,11 +1,25 @@
 import Header from "../../components/header";
 import Dither from "../../components/dither";
 import PageTransition from "../../components/PageTransition";
-import { FaLinkedin, FaGithub, FaFacebook } from "react-icons/fa";
+import { FaLinkedin, FaGithub } from "react-icons/fa";
+import TiltedCard from "../../components/tiltedCard";
 
 export default function TommyRowe() {
     const devicePixelRatio =
         typeof window !== "undefined" ? window.devicePixelRatio : 1;
+
+    // Gallery images and video from your public folder
+    const galleryItems = [
+        "/IMG_1101.jpg",
+        "/IMG_1100.jpg",
+        { src: "/IMG_1099.jpg", style: { objectPosition: "center 60%" } },
+        "/IMG_1098.jpg",
+        "/IMG_1097.jpg",
+        "/IMG_1096.jpg",
+        "/IMG_1095.jpg",
+        "/IMG_1094.jpg",
+        { video: "/e7d08a2c44d9402809580107d1b5d5a2.mov" }, // Video card
+    ];
 
     return (
         <PageTransition>
@@ -135,7 +149,100 @@ export default function TommyRowe() {
                         </div>
                     </div>
                 </div>
-                {/* Social Icons */}
+                {/* Gallery Section */}
+                <div className="py-12 px-4 md:px-8 w-full flex flex-col items-center">
+                    <h2 className="text-2xl md:text-3xl font-bold mb-8 text-white text-center">Gallery</h2>
+                    <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-x-8 gap-y-4 max-w-4xl w-full mx-auto justify-items-center">
+                        {galleryItems.map((item, idx) => {
+                            // Render image cards
+                            if (typeof item === "string") {
+                                return (
+                                    <div key={idx} className="flex justify-center items-center">
+                                        <TiltedCard
+                                            imageSrc={item}
+                                            altText={`Gallery image ${idx + 1}`}
+                                            containerHeight="300px"
+                                            containerWidth="300px"
+                                            imageHeight="300px"
+                                            imageWidth="300px"
+                                            scaleOnHover={1.1}
+                                            rotateAmplitude={14}
+                                            showMobileWarning={false}
+                                            showTooltip={false}
+                                            displayOverlayContent={false}
+                                            className="rounded-xl"
+                                        />
+                                    </div>
+                                );
+                            }
+                            // Render custom styled image
+                            if (item.src) {
+                                return (
+                                    <div key={idx} className="flex justify-center items-center">
+                                        <TiltedCard
+                                            imageSrc={item.src}
+                                            altText={`Gallery image ${idx + 1}`}
+                                            containerHeight="300px"
+                                            containerWidth="300px"
+                                            imageHeight="300px"
+                                            imageWidth="300px"
+                                            scaleOnHover={1.1}
+                                            rotateAmplitude={14}
+                                            showMobileWarning={false}
+                                            showTooltip={false}
+                                            displayOverlayContent={false}
+                                            className="rounded-xl"
+                                            imageStyle={item.style}
+                                        />
+                                    </div>
+                                );
+                            }
+                            // Render video card as TiltedCard
+                            if (item.video) {
+                                return (
+                                    <div key={idx} className="flex justify-center items-center">
+                                        <TiltedCard
+                                            imageSrc={""}
+                                            altText={`Gallery video ${idx + 1}`}
+                                            containerHeight="300px"
+                                            containerWidth="300px"
+                                            imageHeight="295px"
+                                            imageWidth="295px"
+                                            scaleOnHover={1.1}
+                                            rotateAmplitude={14}
+                                            showMobileWarning={false}
+                                            showTooltip={false}
+                                            displayOverlayContent={true}
+                                            overlayContent={
+                                                <video
+                                                    src={item.video}
+                                                    autoPlay
+                                                    loop
+                                                    muted
+                                                    playsInline
+                                                    className="rounded-xl object-cover"
+                                                    style={{
+                                                        width: "100%",
+                                                        height: "100%",
+                                                        maxWidth: "295px",
+                                                        maxHeight: "295px",
+                                                        aspectRatio: "1 / 1",
+                                                        display: "block",
+                                                    }}
+                                                    width={295}
+                                                    height={295}
+                                                />
+                                            }
+                                            className="rounded-xl"
+                                        />
+                                    </div>
+                                );
+                            }
+                            return null;
+                        })}
+                    </div>
+                </div>
+                {/* Social Icons (moved below gallery) */}
                 <div className="py-8 flex justify-center w-full gap-8">
                     <a
                         href="https://www.linkedin.com/in/tommy-rowe-3a720b338"
@@ -154,15 +261,6 @@ export default function TommyRowe() {
                         className="hover:text-gray-400 transition"
                     >
                         <FaGithub className="text-white text-4xl" />
-                    </a>
-                    <a
-                        href="https://www.facebook.com/tommy.rowe.1800/?_rdr"
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        aria-label="Tommy Rowe Facebook"
-                        className="hover:text-blue-600 transition"
-                    >
-                        <FaFacebook className="text-white text-4xl" />
                     </a>
                 </div>
             </div>
