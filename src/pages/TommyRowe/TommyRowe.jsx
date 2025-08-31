@@ -1,7 +1,7 @@
 import Header from "../../components/header";
 import Dither from "../../components/dither";
 import PageTransition from "../../components/PageTransition";
-import { FaLinkedin, FaGithub } from "react-icons/fa";
+import { FaLinkedin, FaGithub, FaGlobe, FaReact, FaDatabase, FaJs, FaCuttlefish, FaMicrochip, FaDraftingCompass, FaCubes, FaBolt, FaBullhorn, FaUsers, FaShareAlt, FaProjectDiagram } from "react-icons/fa";
 import TiltedCard from "../../components/tiltedCard";
 
 export default function TommyRowe() {
@@ -19,6 +19,70 @@ export default function TommyRowe() {
         "/IMG_1095.jpg",
         "/IMG_1094.jpg",
         { video: "/e7d08a2c44d9402809580107d1b5d5a2.mov" }, // Video card
+    ];
+
+    // Skills cards data (with one-line descriptions)
+    const skills = [
+        {
+            icon: <FaGlobe className="text-4xl text-white mb-4" />,
+            title: "Web & App Design",
+            desc: "Designing modern, responsive websites and mobile apps.",
+        },
+        {
+            icon: <FaReact className="text-4xl text-white mb-4" />,
+            title: "React Programming",
+            desc: "Building interactive UIs with React and Next.js.",
+        },
+        {
+            icon: <FaDatabase className="text-4xl text-white mb-4" />,
+            title: "PSQL",
+            desc: "Managing relational databases with PostgreSQL.",
+        },
+        {
+            icon: <FaJs className="text-4xl text-white mb-4" />,
+            title: "JavaScript",
+            desc: "Developing dynamic web applications using JS.",
+        },
+        {
+            icon: <FaCuttlefish className="text-4xl text-white mb-4" />,
+            title: "C++",
+            desc: "Efficient systems and hardware programming.",
+        },
+        {
+            icon: <FaMicrochip className="text-4xl text-white mb-4" />,
+            title: "Arduino",
+            desc: "Prototyping and automation with microcontrollers.",
+        },
+        {
+            icon: <FaBolt className="text-4xl text-white mb-4" />,
+            title: "Electronic Design & Manufacture",
+            desc: "Designing and producing custom electronics.",
+        },
+        {
+            icon: <FaDraftingCompass className="text-4xl text-white mb-4" />,
+            title: "CAD 2D & 3D",
+            desc: "Creating precise models for engineering and design.",
+        },
+        {
+            icon: <FaCubes className="text-4xl text-white mb-4" />,
+            title: "Rapid Prototyping",
+            desc: "Turning ideas into working prototypes quickly.",
+        },
+        {
+            icon: <FaBullhorn className="text-4xl text-white mb-4" />,
+            title: "Marketing",
+            desc: "Promoting products and services effectively.",
+        },
+        {
+            icon: <FaShareAlt className="text-4xl text-white mb-4" />,
+            title: "Social Media Marketing",
+            desc: "Growing brands and engagement on social platforms.",
+        },
+        {
+            icon: <FaProjectDiagram className="text-4xl text-white mb-4" />,
+            title: "Campaign Management",
+            desc: "Planning and executing successful campaigns.",
+        },
     ];
 
     return (
@@ -131,7 +195,7 @@ export default function TommyRowe() {
                         </div>
                     </div>
                 </div>
-                {/* Projects */}
+                {/* Projects Section (moved above Skills) */}
                 <div className="py-12 px-4 md:px-8 w-full flex flex-col items-center">
                     <h2 className="text-2xl md:text-3xl font-bold mb-4 text-white text-center">Projects</h2>
                     <div className="max-w-2xl w-full mx-auto flex flex-col items-center space-y-6">
@@ -147,6 +211,22 @@ export default function TommyRowe() {
                                 I researched and developed piezoelectric nano-generators to power cardiac implants, focusing on energy efficiency and miniaturization.
                             </p>
                         </div>
+                    </div>
+                </div>
+                {/* Skills Section */}
+                <div className="py-12 px-4 md:px-8 w-full flex flex-col items-center">
+                    <h2 className="text-2xl md:text-3xl font-bold mb-8 text-white text-center">Skills</h2>
+                    <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-8 max-w-4xl w-full mx-auto justify-items-center">
+                        {skills.map((skill, idx) => (
+                            <div
+                                key={idx}
+                                className="bg-white/10 rounded-xl flex flex-col items-center justify-center w-[300px] h-[220px] p-8"
+                            >
+                                {skill.icon}
+                                <div className="font-bold text-lg mb-2 text-white text-center">{skill.title}</div>
+                                <div className="text-sm text-gray-300 text-center">{skill.desc}</div>
+                            </div>
+                        ))}
                     </div>
                 </div>
                 {/* Gallery Section */}
@@ -242,7 +322,7 @@ export default function TommyRowe() {
                         })}
                     </div>
                 </div>
-                {/* Social Icons (moved below gallery) */}
+                {/* Social Icons */}
                 <div className="py-8 flex justify-center w-full gap-8">
                     <a
                         href="https://www.linkedin.com/in/tommy-rowe-3a720b338"
