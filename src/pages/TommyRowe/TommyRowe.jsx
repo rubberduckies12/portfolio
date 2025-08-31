@@ -1,7 +1,7 @@
 import Header from "../../components/header";
 import Dither from "../../components/dither";
 import PageTransition from "../../components/PageTransition";
-import { FaLinkedin } from "react-icons/fa";
+import { FaLinkedin, FaGithub, FaFacebook } from "react-icons/fa";
 
 export default function TommyRowe() {
     const devicePixelRatio =
@@ -135,8 +135,8 @@ export default function TommyRowe() {
                         </div>
                     </div>
                 </div>
-                {/* LinkedIn Icon */}
-                <div className="py-8 flex justify-center w-full">
+                {/* Social Icons */}
+                <div className="py-8 flex justify-center w-full gap-8">
                     <a
                         href="https://www.linkedin.com/in/tommy-rowe-3a720b338"
                         target="_blank"
@@ -145,6 +145,24 @@ export default function TommyRowe() {
                         className="hover:text-blue-400 transition"
                     >
                         <FaLinkedin className="text-white text-4xl" />
+                    </a>
+                    <a
+                        href="https://github.com/rubberduckies12"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        aria-label="Tommy Rowe GitHub"
+                        className="hover:text-gray-400 transition"
+                    >
+                        <FaGithub className="text-white text-4xl" />
+                    </a>
+                    <a
+                        href="https://www.facebook.com/tommy.rowe.1800/?_rdr"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        aria-label="Tommy Rowe Facebook"
+                        className="hover:text-blue-600 transition"
+                    >
+                        <FaFacebook className="text-white text-4xl" />
                     </a>
                 </div>
             </div>
