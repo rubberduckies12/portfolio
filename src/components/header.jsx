@@ -187,7 +187,14 @@ export default function Header() {
                     </div>
                 </nav>
                 {/* Page indicator */}
-                <div className="absolute top-20 left-1/2 transform -translate-x-1/2 text-white text-lg opacity-70">
+                <div
+                    className="absolute top-20 left-1/2 transform -translate-x-1/2 text-white text-lg opacity-70 whitespace-nowrap w-max text-center"
+                    style={{
+                        maxWidth: "90vw",
+                        overflow: "hidden",
+                        textOverflow: "ellipsis",
+                    }}
+                >
                     {currentPath === "/" && "You are on Home"}
                     {currentPath === "/about" && "You are on About"}
                     {currentPath === "/MyPropertyPal" && "You are on MyPropertyPal"}

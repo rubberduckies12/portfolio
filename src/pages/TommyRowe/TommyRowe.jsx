@@ -1,6 +1,7 @@
 import Header from "../../components/header";
 import Dither from "../../components/dither";
 import PageTransition from "../../components/PageTransition";
+import { FaLinkedin } from "react-icons/fa";
 
 export default function TommyRowe() {
     const devicePixelRatio =
@@ -133,6 +134,18 @@ export default function TommyRowe() {
                             </p>
                         </div>
                     </div>
+                </div>
+                {/* LinkedIn Icon */}
+                <div className="py-8 flex justify-center w-full">
+                    <a
+                        href="https://www.linkedin.com/in/tommy-rowe-3a720b338"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        aria-label="Tommy Rowe LinkedIn"
+                        className="hover:text-blue-400 transition"
+                    >
+                        <FaLinkedin className="text-white text-4xl" />
+                    </a>
                 </div>
             </div>
         </PageTransition>
