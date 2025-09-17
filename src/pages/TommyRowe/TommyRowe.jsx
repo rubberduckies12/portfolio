@@ -208,7 +208,7 @@ export default function TommyRowe() {
                         <div className="w-full text-center">
                             <div className="font-bold text-lg text-white text-center">Peizo Electrical Nano Generators as a powersupply for cardiac implants</div>
                             <p className="text-gray-300 text-center">
-                                I researched and developed piezoelectric nano-generators to power cardiac implants, focusing on energy efficiency and miniaturization.
+                                I researched and developed piezoelectric nano-generators to power cardiac implants, focusing on energy efficiency and miniaturisation.
                             </p>
                         </div>
                     </div>
